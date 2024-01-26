@@ -18,13 +18,38 @@ from config import Config
 
 class Testing(unittest.TestCase):
     def test_init(self):
-        config = Config(cfg_path=test_resources_dir)
+        # instaniate config
+        config = Config(cfg_path=test_resources_dir, cfg_filename='test_config', cfg_format='json')
         self.assertIsNotNone(config)
-        print(config)
+
+        # add single value
         config.add_value('test', 'test')
+
+        # add array of values
+        ary = ['bing', 'bang', 'bong']
+        config.add_value('boom', ary)
+
+        # add a dict of values
+        dict = {'bing': 'bang', 'bong': 'boom'}
+        config.add_value('dict', dict)
+        
+        # add nested values
+        nested_ary = ['bing', 'bang', 'bong']
+        nested_dict = {'bing': 'bang', 'bong': 'boom'}
+        nested = {'nested_ary': nested_ary, 'nested_dict': nested_dict}
+        config.add_value('nested', nested)
+
+        # write to file        
         config.write_file()
+        
+        # read from file
         config.read_file()
+        
+        # test values
         self.assertEqual(config.get_value('test'), 'test')
+        self.assertEqual(config.get_value('boom'), ary)
+        self.assertEqual(config.get_value('dict'), dict)
+        self.assertEqual(config.get_value('nested'), nested)
 
 
 if __name__ == '__main__':

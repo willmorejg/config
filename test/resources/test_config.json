@@ -1,0 +1,23 @@
+{
+    "test": "test",
+    "boom": [
+        "bing",
+        "bang",
+        "bong"
+    ],
+    "dict": {
+        "bing": "bang",
+        "bong": "boom"
+    },
+    "nested": {
+        "nested_ary": [
+            "bing",
+            "bang",
+            "bong"
+        ],
+        "nested_dict": {
+            "bing": "bang",
+            "bong": "boom"
+        }
+    }
+}
