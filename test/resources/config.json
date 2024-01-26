@@ -1,0 +1,17 @@
+{
+    "test": "test",
+    "testAry": [
+        "test XXX",
+        "test YYY"
+    ],
+    "testDict": {
+        "key": "value"
+    },
+    "new_section": {
+        "foo": {
+            "key": "value"
+        }
+    },
+    "template": "hello world {name}\n                this is some text\n                signed,\n                {author}",
+    "url": "http://localhost:8080/"
+}
