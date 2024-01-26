@@ -50,6 +50,8 @@ class Testing(unittest.TestCase):
         self.assertEqual(config.get_value('boom'), ary)
         self.assertEqual(config.get_value('dict'), dict)
         self.assertEqual(config.get_value('nested'), nested)
+        self.assertEqual(config.get_value('nested')['nested_ary'][2], nested_ary[2])
+        self.assertEqual(config.get_value('nested')['nested_dict']['bong'], nested_dict['bong'])
 
 
 if __name__ == '__main__':
