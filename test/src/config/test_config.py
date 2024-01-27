@@ -26,12 +26,12 @@ class Testing(unittest.TestCase):
         config.add_value('test', 'test')
 
         # add array of values
-        ary = ['bing', 'bang', 'bong']
-        config.add_value('boom', ary)
+        ary_values = ['bing', 'bang', 'bong']
+        config.add_value('boom', ary_values)
 
         # add a dict of values
-        dict = {'bing': 'bang', 'bong': 'boom'}
-        config.add_value('dict', dict)
+        dict_values = {'bing': 'bang', 'bong': 'boom'}
+        config.add_value('dict', dict_values)
         
         # add nested values
         nested_ary = ['bing', 'bang', 'bong']
@@ -47,8 +47,8 @@ class Testing(unittest.TestCase):
         
         # test values
         self.assertEqual(config.get_value('test'), 'test')
-        self.assertEqual(config.get_value('boom'), ary)
-        self.assertEqual(config.get_value('dict'), dict)
+        self.assertEqual(config.get_value('boom'), ary_values)
+        self.assertEqual(config.get_value('dict'), dict_values)
         self.assertEqual(config.get_value('nested'), nested)
         self.assertEqual(config.get_value('nested')['nested_ary'][2], nested_ary[2])
         self.assertEqual(config.get_value('nested')['nested_dict']['bong'], nested_dict['bong'])

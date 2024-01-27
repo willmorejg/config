@@ -5,12 +5,10 @@ import os
 from config_format_mixin import ConfigFormatMixin
 from config_yaml import ConfigYaml
 from config_json import ConfigJson
-from config_ini import ConfigIni
     
 class ConfigFormat(ConfigFormatMixin, Enum):
     YAML = ('yaml', 'yml', ConfigYaml)
     JSON = ('json', 'json', ConfigJson)
-    INI = ('ini', 'ini', ConfigIni)
     
     @staticmethod
     def by_value(value):
